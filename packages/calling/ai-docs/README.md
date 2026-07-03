@@ -36,15 +36,28 @@
 | Resource                | Path                                                                                                   | Purpose                                 |
 | ----------------------- | ------------------------------------------------------------------------------------------------------ | --------------------------------------- |
 | Root AGENTS.md          | [`../AGENTS.md`](../AGENTS.md)                                                                         | Task routing and critical rules         |
-| RULES.md                | [`RULES.md`](RULES.md)                                                                                 | Coding standards and conventions        |
+| SPEC_INDEX.md           | [`../src/ai-docs/SPEC_INDEX.md`](../src/ai-docs/SPEC_INDEX.md)                                        | Module registry and task router (canonical) |
+| ARCHITECTURE.md         | [`ARCHITECTURE.md`](ARCHITECTURE.md)                                                                   | System architecture, component inventory, interaction topology |
+| RULES.md                | [`RULES.md`](RULES.md)                                                                                 | Enforceable rules — naming, logging, errors, testing, drift |
+| GLOSSARY.md             | [`GLOSSARY.md`](GLOSSARY.md)                                                                           | Ubiquitous language — canonical domain term definitions |
+| SECURITY.md             | [`SECURITY.md`](SECURITY.md)                                                                           | Trust boundaries, auth model, secret handling, data classification |
+| CONTRACTS.md            | [`CONTRACTS.md`](CONTRACTS.md)                                                                         | Public-surface catalog — exported API, types, events, compatibility |
+| SERVICE_STATE.md        | [`SERVICE_STATE.md`](SERVICE_STATE.md)                                                                 | Living as-built registry — current surfaces, events, stores, deps |
+| GETTING_STARTED.md      | [`GETTING_STARTED.md`](GETTING_STARTED.md)                                                             | Prerequisites, build/test loop, first-run verification |
+| REVIEW_CHECKLIST.md     | [`REVIEW_CHECKLIST.md`](REVIEW_CHECKLIST.md)                                                           | 6 core + 4 coverage-conditional + 3 cross-cutting review checks |
+| ADR index               | [`adr/README.md`](adr/README.md)                                                                       | Architecture Decision Records index |
+| Rules detail            | [`rules/README.md`](rules/README.md)                                                                   | Per-rule detail pages |
+| Machine manifest        | [`../.sdd/manifest.json`](../.sdd/manifest.json)                                                       | Machine source of truth — coverage states, module registry |
+| Coverage policy         | [`../.sdd/coverage-policy.defaults.yaml`](../.sdd/coverage-policy.defaults.yaml)                       | Drift thresholds and coverage bar |
 | TypeScript Patterns     | [`patterns/typescript-patterns.md`](patterns/typescript-patterns.md)                                   | Type, interface, and code patterns      |
 | Testing Patterns        | [`patterns/testing-patterns.md`](patterns/testing-patterns.md)                                         | Jest test conventions                   |
 | Event Patterns          | [`patterns/event-patterns.md`](patterns/event-patterns.md)                                             | Event-driven architecture patterns      |
 | Error Handling Patterns | [`patterns/error-handling-patterns.md`](patterns/error-handling-patterns.md)                           | Error handling patterns                 |
-| New Module Template     | [`templates/new-module/00-master.md`](templates/new-module/00-master.md)                               | Create new module (planned)             |
-| New Method Template     | [`templates/new-method/00-master.md`](templates/new-method/00-master.md)                               | Add method to existing module (planned) |
-| Bug Fix Template        | [`templates/existing-module/bug-fix.md`](templates/existing-module/bug-fix.md)                         | Fix bug in existing module (planned)    |
-| Feature Enhancement     | [`templates/existing-module/feature-enhancement.md`](templates/existing-module/feature-enhancement.md) | Enhance existing module (planned)       |
+| Architecture Patterns   | [`patterns/architecture-patterns.md`](patterns/architecture-patterns.md)                               | Singleton, factory, backend connector patterns |
+| New Module Template     | [`templates/new-module/00-master.md`](templates/new-module/00-master.md)                               | Create new module workflow              |
+| New Method Template     | [`templates/new-method/00-master.md`](templates/new-method/00-master.md)                               | Add method to existing module workflow  |
+| Bug Fix Template        | [`templates/existing-module/bug-fix.md`](templates/existing-module/bug-fix.md)                         | Fix bug in existing module workflow     |
+| Feature Enhancement     | [`templates/existing-module/feature-enhancement.md`](templates/existing-module/feature-enhancement.md) | Enhance existing module workflow        |
 
 ---
 

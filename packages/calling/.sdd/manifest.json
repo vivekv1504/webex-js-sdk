@@ -1,0 +1,184 @@
+{
+  "schemaVersion": "0.2.0",
+  "templateLibraryVersion": "0.2.0",
+  "repo": {
+    "id": "webex-calling",
+    "package": "@webex/calling",
+    "path": "packages/calling",
+    "description": "Browser TypeScript SDK — WebRTC telephony on the Webex Calling platform",
+    "language": "typescript",
+    "repoType": "monorepo-package"
+  },
+  "commands": {
+    "build": "yarn build",
+    "test": "yarn test:unit",
+    "lint": "yarn test:style",
+    "docs": "yarn build:docs"
+  },
+  "coveragePolicy": ".sdd/coverage-policy.defaults.yaml",
+  "coverageStates": {
+    "AUTHORITATIVE": "Validated spec — trusted without cross-check; drift ≤ 5%",
+    "PARTIAL": "Code-grounded spec — believed accurate, not fully validated; drift ≤ 15%",
+    "DRAFT": "Generated from ai-docs migration — freshly created, not validated; drift ≤ 25%",
+    "NONE": "No spec exists — read source directly"
+  },
+  "modules": [
+    {
+      "id": "calling-package",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/",
+      "specPath": "packages/calling/src/ai-docs/calling-spec.md",
+      "responsibility": "Package entry point — factory functions, public API surface (src/api.ts)",
+      "coverageState": "DRAFT",
+      "tier": "domain"
+    },
+    {
+      "id": "CallingClient",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/CallingClient/",
+      "specPath": "packages/calling/src/CallingClient/ai-docs/calling-client-spec.md",
+      "responsibility": "Mobius server discovery, line/registration lifecycle, network resilience, media engine init",
+      "coverageState": "DRAFT",
+      "tier": "domain"
+    },
+    {
+      "id": "CallingClient/line",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/CallingClient/line/",
+      "specPath": "packages/calling/src/CallingClient/line/ai-docs/line-spec.md",
+      "responsibility": "Registration lifecycle API and call initiation on behalf of a single device",
+      "coverageState": "DRAFT",
+      "tier": "domain"
+    },
+    {
+      "id": "CallingClient/registration",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/CallingClient/registration/",
+      "specPath": "packages/calling/src/CallingClient/registration/ai-docs/registration-spec.md",
+      "responsibility": "Mobius device registration protocol, Web Worker keepalive, 429 retry paths",
+      "coverageState": "DRAFT",
+      "tier": "domain"
+    },
+    {
+      "id": "CallingClient/calling",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/CallingClient/calling/",
+      "specPath": "packages/calling/src/CallingClient/calling/ai-docs/calling-sub-spec.md",
+      "responsibility": "Call + CallManager — XState call/ROAP FSMs, Mobius event routing, call lifecycle",
+      "coverageState": "DRAFT",
+      "tier": "domain"
+    },
+    {
+      "id": "CallingClient/calling/CallerId",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/CallingClient/calling/CallerId/",
+      "specPath": "packages/calling/src/CallingClient/calling/CallerId/ai-docs/caller-id-spec.md",
+      "responsibility": "Caller identity resolution: SIP header priority + async SCIM enrichment",
+      "coverageState": "DRAFT",
+      "tier": "domain"
+    },
+    {
+      "id": "CallHistory",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/CallHistory/",
+      "specPath": "packages/calling/src/CallHistory/ai-docs/call-history-spec.md",
+      "responsibility": "Call history fetch, update missed calls, delete, real-time Janus session events",
+      "coverageState": "DRAFT",
+      "tier": "domain"
+    },
+    {
+      "id": "CallSettings",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/CallSettings/",
+      "specPath": "packages/calling/src/CallSettings/ai-docs/call-settings-spec.md",
+      "responsibility": "Call waiting, DND, call forwarding, voicemail settings (WXC/UCM strategy)",
+      "coverageState": "DRAFT",
+      "tier": "domain"
+    },
+    {
+      "id": "Contacts",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/Contacts/",
+      "specPath": "packages/calling/src/Contacts/ai-docs/contacts-spec.md",
+      "responsibility": "CRUD for contacts and groups with KMS encryption and SCIM resolution",
+      "coverageState": "DRAFT",
+      "tier": "domain"
+    },
+    {
+      "id": "Voicemail",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/Voicemail/",
+      "specPath": "packages/calling/src/Voicemail/ai-docs/voicemail-spec.md",
+      "responsibility": "Voicemail list, content, transcripts, read/delete (WXC/BWRKS/UCM)",
+      "coverageState": "DRAFT",
+      "tier": "domain"
+    },
+    {
+      "id": "Metrics",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/Metrics/",
+      "specPath": "packages/calling/src/Metrics/ai-docs/metrics-spec.md",
+      "responsibility": "Singleton telemetry dispatcher — submits all SDK behavioral events",
+      "coverageState": "DRAFT",
+      "tier": "domain"
+    },
+    {
+      "id": "SDKConnector",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/SDKConnector/",
+      "specPath": null,
+      "responsibility": "Singleton bridge to Webex SDK: HTTP requests + Mercury WebSocket listener registration",
+      "coverageState": "PARTIAL",
+      "tier": "infrastructure"
+    },
+    {
+      "id": "Logger",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/Logger/",
+      "specPath": null,
+      "responsibility": "Leveled structured logging wrapper (CALLING_SDK: prefix)",
+      "coverageState": "PARTIAL",
+      "tier": "infrastructure"
+    },
+    {
+      "id": "Events",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/Events/",
+      "specPath": null,
+      "responsibility": "Eventing<T> typed EventEmitter base class + all event type maps",
+      "coverageState": "PARTIAL",
+      "tier": "infrastructure"
+    },
+    {
+      "id": "Errors",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/Errors/",
+      "specPath": null,
+      "responsibility": "Error hierarchy: ExtendedError → CallError / LineError / CallingClientError",
+      "coverageState": "PARTIAL",
+      "tier": "infrastructure"
+    },
+    {
+      "id": "common",
+      "package": "@webex/calling",
+      "path": "packages/calling/src/common/",
+      "specPath": null,
+      "responsibility": "Shared types, constants, utilities (backend detection, error handlers, SCIM, XSI)",
+      "coverageState": "PARTIAL",
+      "tier": "infrastructure"
+    }
+  ],
+  "contracts": "packages/calling/ai-docs/CONTRACTS.md",
+  "standingDocs": {
+    "agents": "packages/calling/AGENTS.md",
+    "architecture": "packages/calling/ai-docs/ARCHITECTURE.md",
+    "rules": "packages/calling/ai-docs/RULES.md",
+    "specIndex": "packages/calling/src/ai-docs/SPEC_INDEX.md",
+    "glossary": "packages/calling/ai-docs/GLOSSARY.md",
+    "security": "packages/calling/ai-docs/SECURITY.md",
+    "contracts": "packages/calling/ai-docs/CONTRACTS.md",
+    "gettingStarted": "packages/calling/ai-docs/GETTING_STARTED.md",
+    "reviewChecklist": "packages/calling/ai-docs/REVIEW_CHECKLIST.md",
+    "serviceState": "packages/calling/ai-docs/SERVICE_STATE.md"
+  }
+}

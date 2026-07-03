@@ -1,0 +1,18 @@
+# Coverage policy defaults — @webex/calling
+# Applied to all tracked modules in .sdd/manifest.json
+# schemaVersion: 0.2.0
+
+driftThresholds:
+  AUTHORITATIVE: 0.05   # ≤ 5% lines changed without spec update before gate fails
+  PARTIAL: 0.15         # ≤ 15%
+  DRAFT: 0.25           # ≤ 25%
+  NONE: null            # No threshold — read source directly
+
+coverageBar:
+  changedLines: 0.80    # ≥ 80% of changed lines must be covered by tests
+
+specCurrency:
+  sameChangeRequired: true   # spec update MUST land in the same PR as the code change
+  graceWindow: 0             # no grace window — update in the same change
+
+# Override per-module by adding a driftThreshold field to the module entry in manifest.json
